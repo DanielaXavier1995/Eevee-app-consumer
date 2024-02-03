@@ -19,9 +19,5 @@ public class Person {
 	private String name;
 
 	private Integer age;
-
-//	@OneToMany
-//	@JsonIgnoreProperties("person")
-//	private List<Transaction> transactionList;
-
+	
 }
