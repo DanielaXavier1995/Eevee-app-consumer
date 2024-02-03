@@ -1,5 +1,9 @@
 package com.asapcard.Eeve.repository;
 
-public interface Transaction {
+import java.util.UUID;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Transaction extends JpaRepository<Transaction, UUID> {
+		
 }
