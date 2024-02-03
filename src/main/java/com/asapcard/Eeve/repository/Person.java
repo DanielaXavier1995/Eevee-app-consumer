@@ -1,5 +1,7 @@
 package com.asapcard.Eeve.repository;
 
-public interface Person {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Person extends JpaRepository<Person, String> {
 
 }
