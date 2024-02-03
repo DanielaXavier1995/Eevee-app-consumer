@@ -14,14 +14,14 @@ import jakarta.persistence.Table;
 public class Person {
 
 	@Id
-	private String id;
+	private Long id;
 
-	private String nome;
+	private String name;
 
-	private Integer idade;
+	private Integer age;
 
-	@OneToMany
-	@JsonIgnoreProperties("person")
-	private List<Transaction> transactionList;
+//	@OneToMany
+//	@JsonIgnoreProperties("person")
+//	private List<Transaction> transactionList;
 
 }
