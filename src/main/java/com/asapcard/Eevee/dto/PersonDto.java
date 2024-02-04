@@ -1,4 +1,4 @@
-package com.asapcard.Eeve.model;
+package com.asapcard.Eevee.dto;
 
 import org.springframework.amqp.core.Message;
 
@@ -10,15 +10,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class JsonTransaction {
+public class PersonDto {
 	
 	private Integer age;
-    //private Integer installmentNumber;
-   //private Double amount;
     private Long personId;
     private String name;
-   // private UUID transactionId;
-   // private LocalDate transactionDate;
     
     public String toJson(Message message) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();

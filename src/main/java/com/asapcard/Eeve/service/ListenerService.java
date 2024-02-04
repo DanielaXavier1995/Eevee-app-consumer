@@ -1,51 +1,46 @@
 package com.asapcard.Eeve.service;
 
-import java.util.Optional;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.asapcard.Eeve.model.Person;
-import com.asapcard.Eeve.repository.InstallmentRepository;
 import com.asapcard.Eeve.repository.PersonRepository;
-import com.asapcard.Eeve.repository.TransactionRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class ListenerService {
 
-    @Autowired
-    private PersonRepository personRepository;
+	@Autowired
+	private PersonRepository personRepository;
 
-    @Autowired
-    private InstallmentRepository installmentRepository;
+	private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @Autowired
-    private TransactionRepository transactionRepository;
+	@RabbitListener(queues = "queue-a")
+	public void listen(String message) {
+		try {
+			if (!(message != null && message.isEmpty())) {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+				JsonNode jsonNode = objectMapper.readTree(message);
 
-    @RabbitListener(queues = "queue-a")
-    public void listen(String message) {
-        try {
-            JsonNode jsonNode = objectMapper.readTree(message);
+				Person person = new Person();
+				person.setId(jsonNode.get("id").asLong());
+				person.setName(jsonNode.get("nome").asText());
+				person.setAge(jsonNode.get("idade").asInt());
 
-            Person person = new Person();
-            person.setId(jsonNode.get("id").asLong());
-            person.setName(jsonNode.get("nome").asText());
-            person.setAge(jsonNode.get("idade").asInt());
+				List<Person> personList = new ArrayList<>();
+				personList.add(person);
 
-            java.util.Optional<Person> personFound = personRepository.findById(person.getId());
-            UUID uuid = UUID.randomUUID();
+				personRepository.saveAll(personList);
+			}
 
-            if (!personFound.isPresent()) {
-                personRepository.save(person);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
