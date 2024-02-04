@@ -45,6 +45,10 @@ OBS: Importante destacar que o RabbitMQ está configurado na aplicação para ro
 ## Contribuição 💭
 Este projeto é de código aberto, e você é incentivado a contribuir. Sinta-se à vontade para abrir issues, enviar pull requests e melhorar a funcionalidade geral do sistema.
 
+## Organização interna do projeto 
+Como forma de organização interna do projeto, destrinchamos cada etapa do projeto  por meio do trello, sendo constituídas de tasks por checkbox. Seguimos as tasks como forma eficiente de realizar o projeto em grupo.
+Segue o link do Trello: https://trello.com/b/6KNul3SI/grupo-eeve-asapcard-hackathon
+
 ## Autores 👨‍💻 👩‍💻
 - [Daniela Xavier](https://www.linkedin.com/in/dani-xavier/)
 - [Gabriella Vieira](https://www.linkedin.com/in/gabriellavieirabruno/)
