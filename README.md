@@ -13,6 +13,7 @@ Essas são as 3 aplicações desenvolvidas com suas respectivas funcionalidades:
 <div align="middle">
   
  ![687474703a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d535441545553266d6573736167653d454d253230444553454e564f4c56494d454e544f26636f6c6f723d475245454e267374796c653d666f722d7468652d6261646765](https://github.com/DanielaXavier1995/Grupo-Eeve_Asapcard-Hackathon/assets/147341840/3903ee25-3aab-4dce-8700-56f1b11b2259)
+ 
 </div>
 
 ## Tecnologias utilizadas
@@ -20,15 +21,23 @@ Essas são as 3 aplicações desenvolvidas com suas respectivas funcionalidades:
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/Rabbitmq-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
 ![Erlang](https://img.shields.io/badge/Erlang-white.svg?style=for-the-badge&logo=erlang&logoColor=a90533)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
 ## Diagrama MER: 📂
 ![WhatsApp Image 2024-02-04 at 11 39 30](https://github.com/DanielaXavier1995/Grupo-Eeve_Asapcard-Hackathon/assets/147341840/58d2b011-892e-4da3-aba0-ebd8085c1011)
 
-## Instalação
+## Preparar Ambiente:
 Utilizamos a IDE STS, o framework Spring Boot para construir o código e o banco de dados MySQL. Para isso, é necessário:
-1. Instalar o STS: https://spring.io/tools
+1. Instalar uma IDE de sua preferência
 2. Instalar o Spring Boot: https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.introducing-spring-boot
 3. Instalar o MySQL: https://dev.mysql.com/downloads/
+4. Instalar o RabbitMQ: https://rabbitmq.com/download.html
+
+## Executar o código localmente:
+OBS: Importante destacar que o RabbitMQ está configurado na aplicação para rodar localmente na máquina.
+
+1. Executar o seguinte código: git clone https://github.com/DanielaXavier1995/Eevee-app-consumer.git
+2. Abrir o código na IDE e executar localmente
 
 ## Contribuição
 Este projeto é de código aberto, e você é incentivado a contribuir. Sinta-se à vontade para abrir issues, enviar pull requests e melhorar a funcionalidade geral do sistema.
